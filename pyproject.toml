@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quest_k"
+version = "0.1"
+authors = [{name="Sebastian Mooser Martin", email="s.mooser.martin@hum.leidenuniv.nl"}]
+description = "Gives a cross-linguistic example of the day."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "datetime",
+    "argparse"]
+
+[project.scripts]
+quest_k = "quest_k:cli"
+
+[project.urls]
+"Homepage" = "https://github.com/smoosermartin/quest_k"
+"Bug Tracker" = "https://github.com/smoosermartin/quest_k/issues"
