@@ -69,7 +69,11 @@ def choose_example(date_obj, examples_l):
     return choice
 
 
-def cli(date_arg):
+def cli():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--date", type=str, help="Date in DD/MM/YYYY format, or 'yesterday' or 'tomorrow'")
+    args = parser.parse_args()
+    date_arg = args.date
     check_files()
     examples_l = get_list_csv('~/.cache/quest_k/examples.csv')
     languages_l = get_list_csv('~/.cache/quest_k/languages.csv')
@@ -81,7 +85,4 @@ def cli(date_arg):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--date", type=str, help="Date in DD/MM/YYYY format, or 'yesterday' or 'tomorrow'")
-    args = parser.parse_args()
-    cli(args.date)
+    cli()
